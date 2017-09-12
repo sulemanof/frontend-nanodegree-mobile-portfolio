@@ -18,8 +18,7 @@
      <script type="text/javascript">
       function logCRP(){var t=window.performance.timing,dcl=t.domContentLoadedEventStart-t.domLoading,complete=t.domComplete-t.domLoading;var stats=document.getElementById("crp-stats");stats.textContent='DCL: '+dcl+'ms, onload: '+complete+'ms';}window.addEventListener("load",function(event){logCRP();});
      </script>
-    <link href="https://drive.google.com/uc?export=view&id=0BzYNbTQdizTxeU4tNmUxR0prb2c" rel="stylesheet" media="print">
-    <style async>
+    <style type="text/css" async>
       body { margin: 0; font-size: 14px; line-height: 1.61; font-weight: 400; background: #fff;  }
         body, button, input, select, textarea { font-family: 'Open Sans', sans-serif; color: #333; }
 
@@ -61,8 +60,32 @@
           body { font-size: 12px;}
           header p { padding-left: 4.5em;}
         }
-
-    </style>>
+        @media print {
+          * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
+          a, a:visited { color: #444 !important; text-decoration: underline; }
+          a[href]:after { content: " (" attr(href) ")"; }
+          tr, img { page-break-inside: avoid; }
+          img { max-width: 100% !important; }
+          @page { margin: 0.5cm; }
+          p, h2, h3 { orphans: 3; widows: 3; }
+          h2, h3{ page-break-after: avoid; }
+        }
+        @font-face {
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 400;
+          src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v13/RjgO7rYTmqiVp7vzi-Q5URJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+             unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+          /* cyrillic */
+        @font-face {
+          font-family: 'Open Sans';
+         font-style: normal;
+          font-weight: 700;
+          src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzJX5f-9o1vgP2EXwfjgl7AY.woff2) format('woff2');
+          unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+    </style>
   </head>
     <style>
         font-size: 100%;
@@ -116,6 +139,5 @@
         <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
       </footer>
     </div>
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   </body>
 </html>
